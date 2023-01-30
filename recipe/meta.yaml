@@ -24,7 +24,7 @@ requirements:
     - click >2
     - colorama <1
     - configparser
-    - distro >=1.5,<2
+    - distro >=1.6,<2
     - gevent >=1.5
     - graphlib-backport
     - jinja2 >2,<4
