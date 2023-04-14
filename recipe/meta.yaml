@@ -1,5 +1,5 @@
 {% set name = "pyinfra" %}
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
-  sha256: 98d811657f840e464656cc46b94ce9f204b890759afbd3fa923abd21f78ee484
+  sha256: 16a91358db837586a10615e853279da11bd7425f1dfed7804903c88ed1b95cb4
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - click >2
     - colorama <1
     - configparser
-    - distro >=1.5,<2
+    - distro >=1.6,<2
     - gevent >=1.5
     - graphlib-backport
     - jinja2 >2,<4
