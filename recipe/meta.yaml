@@ -43,7 +43,12 @@ test:
   commands:
     - pip check
     - pyinfra --help
-    - pytest -vvv --capture=tee-sys -k "not test_facts and not test_operations" tests
+    
+    # Skip these ones, missing test resoruce files from sdist
+    - rm tests/test_facts.py
+    - rm tests/test_operations.py
+    
+    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
     - pytest
