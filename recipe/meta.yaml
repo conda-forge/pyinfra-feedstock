@@ -35,14 +35,18 @@ requirements:
     - setuptools
 
 test:
+  source_files:
+    - tests
   imports:
     - pyinfra
     - pyinfra_cli
   commands:
     - pip check
     - pyinfra --help
+    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
+    - pytest
 
 about:
   home: https://pyinfra.com
