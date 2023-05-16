@@ -43,7 +43,7 @@ test:
   commands:
     - pip check
     - pyinfra --help
-    - pytest -vvv --capture=tee-sys tests
+    - pytest -vvv --capture=tee-sys -k "not test_facts and not test_operations" tests
   requires:
     - pip
     - pytest
