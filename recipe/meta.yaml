@@ -48,7 +48,7 @@ test:
     - rm tests/test_facts.py
     - rm tests/test_operations.py
     
-    - pytest -vvv --capture=tee-sys -k "not test_user_op and not test_ansible not test_get_fact" tests
+    - pytest -vvv --capture=tee-sys -k "not test_user_op and not test_ansible and not test_get_fact" tests
   requires:
     - pip
     - pytest
