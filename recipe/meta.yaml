@@ -1,5 +1,5 @@
 {% set name = "pyinfra" %}
-{% set version = "2.7" %}
+{% set version = "2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
-  sha256: 727fc45d0abd8cf3759b93706620ea6eb06f1517f7727210aa7b0d7131eb8914
+  sha256: 045b58d7f4813ccfb1996e497196d49362eeb597071366bfd9b30ea30a01f8c7
 
 build:
   noarch: python
@@ -43,11 +43,11 @@ test:
   commands:
     - pip check
     - pyinfra --help
-    
+
     # Skip these ones, missing test resoruce files from sdist
     - rm tests/test_facts.py
     - rm tests/test_operations.py
-    
+
     - pytest -vvv --capture=tee-sys -k "not test_user_op and not test_ansible and not test_get_fact and not deploy" tests
   requires:
     - pip
