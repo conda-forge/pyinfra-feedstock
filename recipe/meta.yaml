@@ -28,7 +28,7 @@ requirements:
     - gevent >=1.5
     - graphlib-backport
     - jinja2 >2,<4
-    - paramiko >=2.7,<3
+    - paramiko >=2.7,<4
     - python >=3.6
     - python-dateutil >2,<3
     - pywinrm
