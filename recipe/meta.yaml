@@ -1,5 +1,5 @@
 {% set name = "pyinfra" %}
-{% set version = "2.8" %}
+{% set version = "2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
-  sha256: 045b58d7f4813ccfb1996e497196d49362eeb597071366bfd9b30ea30a01f8c7
+  sha256: 35ca4cac87c6ef952e10f568973307ab040bf5240ac4832f53e16f6d4b5b9bc4
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - gevent >=1.5
     - graphlib-backport
     - jinja2 >2,<4
-    - paramiko >=2.7,<3
+    - paramiko >=2.7,<4
     - python >=3.6
     - python-dateutil >2,<3
     - pywinrm
