@@ -1,5 +1,5 @@
 {% set name = "pyinfra" %}
-{% set version = "2.9" %}
+{% set version = "2.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
-  sha256: 35ca4cac87c6ef952e10f568973307ab040bf5240ac4832f53e16f6d4b5b9bc4
+  sha256: 9539486457175eff8e6da0ecd94445c374e032ed4ce117610f3e05d48e8e37c9
 
 build:
   noarch: python
@@ -21,37 +21,27 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - click >2
-    - colorama <1
-    - configparser
-    - distro >=1.6,<2
-    - gevent >=1.5
-    - graphlib-backport
-    - jinja2 >2,<4
-    - paramiko >=2.7,<4
     - python >=3.6
+    - gevent >=1.5
+    - paramiko >=2.7,<4
+    - click >2
+    - jinja2 >2,<4
     - python-dateutil >2,<3
-    - pywinrm
     - setuptools
+    - configparser
+    - pywinrm
+    - distro >=1.6,<2
+    - graphlib-backport
 
 test:
-  source_files:
-    - tests
   imports:
     - pyinfra
     - pyinfra_cli
   commands:
     - pip check
     - pyinfra --help
-
-    # Skip these ones, missing test resoruce files from sdist
-    - rm tests/test_facts.py
-    - rm tests/test_operations.py
-
-    - pytest -vvv --capture=tee-sys -k "not test_user_op and not test_ansible and not test_get_fact and not deploy" tests
   requires:
     - pip
-    - pytest
 
 about:
   home: https://pyinfra.com
