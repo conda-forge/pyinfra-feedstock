@@ -21,37 +21,27 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - click >2
-    - colorama <1
-    - configparser
-    - distro >=1.6,<2
-    - gevent >=1.5
-    - graphlib-backport
-    - jinja2 >2,<4
-    - paramiko >=2.7,<4
     - python >=3.6
+    - gevent >=1.5
+    - paramiko >=2.7,<4
+    - click >2
+    - jinja2 >2,<4
     - python-dateutil >2,<3
-    - pywinrm
     - setuptools
+    - configparser
+    - pywinrm
+    - distro >=1.6,<2
+    - graphlib-backport
 
 test:
-  source_files:
-    - tests
   imports:
     - pyinfra
     - pyinfra_cli
   commands:
     - pip check
     - pyinfra --help
-
-    # Skip these ones, missing test resoruce files from sdist
-    - rm tests/test_facts.py
-    - rm tests/test_operations.py
-
-    - pytest -vvv --capture=tee-sys -k "not test_user_op and not test_ansible and not test_get_fact and not deploy" tests
   requires:
     - pip
-    - pytest
 
 about:
   home: https://pyinfra.com
