@@ -19,9 +19,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
   run:
-    - python >=3.6
+    - python >=3.8
     - gevent >=1.5
     - paramiko >=2.7,<4
     - click >2
@@ -30,8 +30,12 @@ requirements:
     - setuptools
     - configparser
     - pywinrm
+    - typeguard
     - distro >=1.6,<2
+    - packaging >=16.1
     - graphlib-backport
+    - typing-extensions
+    - importlib_metadata
 
 test:
   imports:
