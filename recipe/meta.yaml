@@ -20,6 +20,7 @@ requirements:
   host:
     - pip
     - python >=3.8
+    - setuptools
   run:
     - python >=3.8
     - gevent >=1.5
@@ -35,7 +36,7 @@ requirements:
     - packaging >=16.1
     - graphlib-backport
     - typing-extensions
-    - importlib_metadata
+    - importlib-metadata 
 
 test:
   imports:
