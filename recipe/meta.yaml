@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
   sha256: 5209a05897597c8747511bb559809a64a84377ae77424d3869d46583f95f2f30
 
 build:
@@ -14,15 +14,15 @@ build:
   entry_points:
     - pyinfra=pyinfra_cli.__main__:execute_pyinfra
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - gevent >=1.5
     - paramiko >=2.7,<4
     - click >2
@@ -47,6 +47,7 @@ test:
     - pyinfra --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pyinfra.com
