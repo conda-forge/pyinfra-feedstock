@@ -1,5 +1,5 @@
 {% set name = "pyinfra" %}
-{% set version = "3.1.1" %}
+{% set version = "3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
-  sha256: 5209a05897597c8747511bb559809a64a84377ae77424d3869d46583f95f2f30
+  sha256: ea65f2048860dae6a7d86470d4a7ca67c9e2e82d671e781b849f1e5e163ad6db
 
 build:
   noarch: python
   entry_points:
     - pyinfra=pyinfra_cli.__main__:execute_pyinfra
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -36,7 +36,7 @@ requirements:
     - packaging >=16.1
     - graphlib-backport
     - typing-extensions
-    - importlib-metadata 
+    - importlib-metadata
 
 test:
   imports:
