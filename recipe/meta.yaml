@@ -1,5 +1,5 @@
 {% set name = "pyinfra" %}
-{% set version = "3.3.1" %}
+{% set version = "3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyinfra-{{ version }}.tar.gz
-  sha256: 8dff68a46f82cc699e8f9f3b1ac5c86377cff4fd74a9ae168281232f7f935cb2
+  sha256: 56ff0c62985823edbd6b5c888acfb2717151167d95a5fb5b859bc2eea19822a3
 
 build:
   noarch: python
