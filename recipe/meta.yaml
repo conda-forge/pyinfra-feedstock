@@ -1,5 +1,6 @@
 {% set name = "pyinfra" %}
 {% set version = "3.4" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
