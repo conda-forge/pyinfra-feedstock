@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: pyinfra
-  version: 3.4
-  python_min: 3.10
+  version: "3.4.1"
+  python_min: '3.10'
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyinfra-${{ version }}.tar.gz
-  sha256: 56ff0c62985823edbd6b5c888acfb2717151167d95a5fb5b859bc2eea19822a3
+  sha256: 3778bc06879c08605ac65cf288a5e64aaa58e7339e3c449e3a5e8b744d241883
 
 build:
   number: 0
