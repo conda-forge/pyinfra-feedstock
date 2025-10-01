@@ -2,8 +2,7 @@ schema_version: 1
 
 context:
   name: pyinfra
-  version: "3.5"
-  python_min: '3.10'
+  version: "3.5.1"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyinfra-${{ version }}.tar.gz
-  sha256: db7f7de7e5e3d2202fb01c089e93e6bef7a5d898d119f3a8964da4b54e123a9c
+  sha256: 9d8e928ae7fe43cd7d6d07a09654266ec1e4e15c3d0fd8411ae85d055eff6a0b
 
 build:
   number: 0
@@ -19,27 +18,25 @@ build:
   script: ${{ PYTHON }} -m pip install . -vv
   python:
     entry_points:
-      - pyinfra=pyinfra_cli.__main__:execute_pyinfra
+      - pyinfra=pyinfra_cli.main:main
 
 requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - hatchling
+    - uv-dynamic-versioning
   run:
     - python >=${{ python_min }}
     - gevent >=1.5
     - paramiko >=2.7,<4
     - click >2
-    - jinja2 >2,<4
+    - jinja2 >3,<4
     - python-dateutil >2,<3
-    - pywinrm
-    - typeguard
+    - typeguard >=4,<5
     - distro >=1.6,<2
     - packaging >=16.1
-    - graphlib-backport
     - typing-extensions
-    - importlib-metadata
 
 tests:
   - python:
