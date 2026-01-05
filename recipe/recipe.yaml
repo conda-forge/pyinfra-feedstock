@@ -37,6 +37,7 @@ requirements:
     - distro >=1.6,<2
     - packaging >=16.1
     - typing-extensions
+    - pydantic >=2.11,<3
 
 tests:
   - python:
