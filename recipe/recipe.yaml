@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyinfra
-  version: "3.5.1"
+  version: "3.6"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyinfra-${{ version }}.tar.gz
-  sha256: 9d8e928ae7fe43cd7d6d07a09654266ec1e4e15c3d0fd8411ae85d055eff6a0b
+  sha256: 4ce84ec94c8d8915eaad108f183aa4eabf58687679f14f78aad44414bc79a4cd
 
 build:
   number: 0
@@ -37,6 +37,7 @@ requirements:
     - distro >=1.6,<2
     - packaging >=16.1
     - typing-extensions
+    - pydantic >=2.11,<3
 
 tests:
   - python:
