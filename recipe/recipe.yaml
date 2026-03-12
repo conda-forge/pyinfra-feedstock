@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyinfra
-  version: "3.6.1"
+  version: "3.7"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyinfra-${{ version }}.tar.gz
-  sha256: 03b56633fcd80226f454e47de6b0dfa42314ee88d6b2c1c5c31e30b009e9bd31
+  sha256: 2f8eeee84d4d90c5ee57300ae6673b58237117605cca6b0cffde29f0b2517d4b
 
 build:
   number: 0
