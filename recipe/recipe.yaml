@@ -36,7 +36,7 @@ requirements:
     - typeguard >=4,<5
     - distro >=1.6,<2
     - packaging >=16.1
-    - typing-extensions
+    - typing_extensions
     - pydantic >=2.11,<3
     - types-paramiko >=2.7,<5
 
@@ -46,7 +46,9 @@ tests:
         - pyinfra
         - pyinfra_cli
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
