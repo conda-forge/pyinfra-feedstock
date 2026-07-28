@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyinfra
-  version: "3.9.2"
+  version: "3.10.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyinfra-${{ version }}.tar.gz
-  sha256: 035a94c7d0a78059c86279f9292242ddf8b883959296e033aa0033db7f14e517
+  sha256: 802d22046eb84937ffd2aadb7dd192a3cc2b830b026f9878617349614076810f
 
 build:
   number: 0
@@ -36,7 +36,7 @@ requirements:
     - typeguard >=4,<5
     - distro >=1.6,<2
     - packaging >=16.1
-    - typing-extensions
+    - typing_extensions
     - pydantic >=2.11,<3
     - types-paramiko >=2.7,<5
 
@@ -46,7 +46,9 @@ tests:
         - pyinfra
         - pyinfra_cli
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
