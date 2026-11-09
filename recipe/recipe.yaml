@@ -29,7 +29,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - gevent >=1.5
-    - paramiko >=2.11,<5
+    - paramiko >=3.2,<6
     - click >2
     - jinja2 >3,<4
     - python-dateutil >2,<3
@@ -38,7 +38,9 @@ requirements:
     - packaging >=16.1
     - typing_extensions
     - pydantic >=2.11,<3
-    - types-paramiko >=2.7,<5
+    - types-paramiko >=2.7,<6
+    - rich >=13.7.1
+    - cyclopts >=4,<5
 
 tests:
   - python:
