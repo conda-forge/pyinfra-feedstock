@@ -30,7 +30,6 @@ requirements:
     - python >=${{ python_min }}
     - gevent >=1.5
     - paramiko >=3.2,<6
-    - click >2
     - jinja2 >3,<4
     - python-dateutil >2,<3
     - typeguard >=4,<5
