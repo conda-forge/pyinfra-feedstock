@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pyinfra
-  version: "3.11.1"
+  version: "3.11.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyinfra-${{ version }}.tar.gz
-  sha256: 6017acf7b9c2a691217a038728ce4e4c703a986e6930c43c0e8b55d2a8a7265d
+  sha256: 5032e5f7a5c8c04d13bcfbef312cdad1c939a78009577ba4a729c71fb3565ef5
 
 build:
   number: 0
@@ -31,7 +31,7 @@ requirements:
     - gevent >=1.5
     - paramiko >=3.2,<6
     - jinja2 >3,<4
-    - python-dateutil >2,<3
+    - python-dateutil >2,<4
     - typeguard >=4,<5
     - distro >=1.6,<2
     - packaging >=16.1
@@ -39,7 +39,7 @@ requirements:
     - pydantic >=2.11,<3
     - types-paramiko >=2.7,<6
     - rich >=13.7.1
-    - cyclopts >=4,<5
+    - cyclopts >=4,<6
 
 tests:
   - python:
